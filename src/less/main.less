@@ -1,0 +1,41 @@
+@import 'media';
+
+// Код для примера
+body {
+    background: #ccc;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: red; // red on small devices
+
+    @media @tablet {
+        background: green; // green on medium devices
+    }
+
+    @media @desktop {
+        background: blue; // blue on large devices
+    }
+
+    &__item {
+        display: inline-block;
+        list-style-type: none;
+    }
+
+    &__link {
+        color: #FFF;
+    }
+
+    // Bottom Menu
+    &_bottom { // BEM modifier example
+        background: green;
+    }
+
+    &_bottom &__link {
+        color: #f00;
+    }
+}
+
+
