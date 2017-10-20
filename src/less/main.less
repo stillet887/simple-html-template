@@ -127,11 +127,26 @@ html, body {
     border: 1px solid @nav-border;
     max-height: 50px;
     overflow: hidden;
-    transition: max-height 1s ease-out;
+    transition: max-height 0.05s ease-out;
 }
 
-.nav-strip__open {
-    max-height: 100px;
+.nav-strip_open {
+    @media @phone-strict {
+        max-height: 150px;
+
+        .menu {
+            display: block;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .search {
+            display: block;
+            width: 280px;
+            margin: auto;
+        }
+    }
+
 }
 
 //----------------------------  MENU block
