@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="header container-fluid">
+    <a class="header__shop-link">
+        <img class="header__shop-logo" src="img/the_shop_logo.svg">
+    </a>
+
+    <a href="http://oggettoweb.com/" class="header__oggetto-link">
+        <img class="header__oggetto-logo" src="img/oggetto_logo.svg">
+    </a>
+
+    <div class="header__phone">+7 (812) 2&bull;12&bull;85&bull;06</div>
+</header>
+
+<div class="nav-strip">
+    <div class="container-fluid">
+        <div class="nav-button"></div>
+        <ul class="menu">
+            <% let menu__items = ['LISP', 'OCalm', 'JavaScript', 'Python', 'PHP'];
+                menu__items.forEach( (item, index) => {
+                let selected = index == 0 ? 'menu__link_selected' : ''; %>
+            <li class="menu__item">
+                <a class="menu__link <%= selected %>" href="#"><%= item %></a>
+            </li>
+            <% }); %>
+        </ul>
+        <form method="get" class="search right-on-tablet">
+            <input class="search__input" name="query">
+            <img class="search__icon" src="img/icons/search.svg">
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="product clearfix">
+        <div class="breadcrumbs">
+            <a class="breadcrumbs__link" href="#">LISP</a>
+            /
+            <a class="breadcrumbs__link" href="#">Одежда</a>
+            /
+            <a class="breadcrumbs__link breadcrumbs__link_last" href="#">Футболки</a>
+        </div>
+        <div class="product__info right-on-desktop">
+            <h1 class="product__name">Футболка Alien technology</h1>
+            <div class="product__description">
+                Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
+            </div>
+            <div class="product__price">
+                1500 &#8381;
+            </div>
+        </div>
+
+        <img class="product__image left-on-desktop" src="img/tshirts/tshirt_white.jpg">
+
+        <form method="post" class="product__form right-on-desktop">
+            <div class="product__settings">
+                <div class="product__sizes">
+                    <div class="product__option-group-name">Размер</div>
+                    <% let sizes = [
+                        { option_type: 'size',
+                          орtion_value: 's' },
+                        { option_type: 'size',
+                        орtion_value: 'm' },
+                        { option_type: 'size',
+                        орtion_value: 'l' } ];
+                    sizes.forEach( (item, index) => {
+                        let id = item.option_type + '_' + item.орtion_value;
+                        let mod = 'product__option_' + id;
+                        let checked = index == 0 ? 'checked' : ''; %>
+                        <input id= <%= id %> name='size' type="radio" <%= checked %> value= <%= item.орtion_value %> class="product__radio">
+                        <label for= <%= id %> class="product__option <%= mod %> product__option_<%= checked %>"><%= item.орtion_value %></label>
+                    <% }); %>
+                </div>
+
+                <div class="product__colors">
+                    <div class="product__option-group-name">Цвет</div>
+                    <% let colors = [
+                        { option_type: 'color',
+                            орtion_value: 'white' },
+                        { option_type: 'color',
+                            орtion_value: 'yellow' },
+                        { option_type: 'color',
+                            орtion_value: 'green' } ];
+                    colors.forEach( (item, index) => {
+                        let id = item.option_type + '_' + item.орtion_value;
+                    let mod = 'product__option_' + id;
+                    let checked = index == 0 ? 'checked' : ''; %>
+                    <input id= <%= id %> name='color' type="radio" <%= checked %> value= <%= item.орtion_value %> class="product__radio">
+                    <label for= <%= id %> class="product__option <%= mod %> product__option_<%= checked %>" data-color=<%= item.орtion_value %>></label>
+                    <% }); %>
+                </div>
+            </div>
+
+            <div class="product__actions ">
+                <button type="submit" class="product__buy">Купить</button>
+                <div class="product__save">
+                    <img class="product__heart" src="img/icons/heart-grey.svg">Отложить на потом
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="footer__links">
+            <div class="footer__service">
+                <ul class="footer__group footer__group_centered-mobile padding-for-title">
+                    <% let footer_service_links = ['Сервис и поддержка', 'Как сделать заказ', 'Возврат товара', 'Публичная оферта',
+                        'Доставка', 'Спобобы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'];
+                        footer_service_links.forEach( (item, index) => {
+                        let title = index == 0 ? 'footer__title' : ''; %>
+                        <li class="footer__item <%= title %>">
+                            <a class="footer__link" href="#"><%= item %></a>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+
+            <div class="footer__info">
+                <ul class="footer__group footer__group_centered-mobile padding-for-title">
+                    <% let footer_info_links = ['О компании', 'О нас', 'Контакты', 'Вакансии',
+                        'Партнерам', 'Сертификаты', 'Преимущества', 'Наши скидки'];
+                    footer_info_links.forEach( (item, index) => {
+                        let title = index == 0 ? 'footer__title' : ''; %>
+                    <li class="footer__item <%= title %>">
+                        <a class="footer__link" href="#"><%= item %></a>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+
+            <div class="footer__benefits">
+                <ul class="footer__group footer__group_centered items-vertical-align">
+                    <li class="footer__item mobile-text-centered">
+                        <a class="footer__link" href="#">
+                            <img class="footer__img footer__img_s footer__img_shift_l" src="img/icons/delivery.svg">
+                            бесплатная доставка от 4000
+                        </a>
+                    </li>
+                    <li class="footer__item mobile-text-centered">
+                        <a class="footer__link" href="#">
+                            <img class="footer__img footer__img_s footer__img_shift_s" src="img/icons/heart.svg">
+                            пробники в подарок при каждой покупке
+                        </a>
+                    </li>
+                    <li class="footer__item mobile-text-centered">
+                        <a class="footer__link" href="#">
+                            <img class="footer__img footer__img_s footer__img_shift_s" src="img/icons/cup.svg">
+                            акции и подарки за покупку
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="footer__group footer__group_centered footer__network">
+                <% let networks = ['facebook', 'twitter', 'instagram']
+                   networks.forEach( item => { %>
+                    <li><a href="#">
+                        <img class="footer__img footer__img_l" src="img/icons/<%= item %>.svg">
+                    </a></li>
+                <% }); %>
+            </ul>
+        </div>
+
+        <div class="copyright">
+            <div class="copyright__name">2005-2017 &copy 7h35h0p - модный магазин одежды, обуви и аксессуаров </div>
+            <div class="copyright__message">Все права защищены. Доставка по всей России!</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
