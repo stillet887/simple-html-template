@@ -13,15 +13,15 @@ const sourcemaps = require('gulp-sourcemaps');
 gulp.task('livereload', () => {
     browserSync.create();
 
-browserSync.init({
-    server: {
-        baseDir: 'dist'
-    },
-    browser: 'google chrome',
-    files: [
-        'dist/**/*.*'
-    ]
-});
+    browserSync.init({
+        server: {
+            baseDir: 'dist'
+        },
+        browser: 'google chrome',
+        files: [
+            'dist/**/*.*'
+        ]
+    });
 });
 
 gulp.task('styles', () => {
@@ -53,9 +53,9 @@ gulp.task('html', () => {
 // Отслеживание изменений в файлах, нужно только при локальной разработке
 gulp.task('watch', () => {
     gulp.watch('src/less/**/*.less', ['styles']);
-gulp.watch('src/**/*.ejs', ['html']);
-gulp.watch('src/img/**/*.*', ['img']);
-gulp.watch('src/js/**/*.*', ['js']);
+    gulp.watch('src/**/*.ejs', ['html']);
+    gulp.watch('src/img/**/*.*', ['img']);
+    gulp.watch('src/js/**/*.*', ['js']);
 });
 
 gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch']);

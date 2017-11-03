@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "prod": "gulp prod",
-    "lint": "eslint src && stylelint src/less/*.less"
+    "lint": "eslint gulpfile.js src && stylelint src/less/*.less"
   },
   "author": "Andrey Miskov",
   "license": "ISC",

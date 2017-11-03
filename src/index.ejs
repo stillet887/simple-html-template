@@ -13,14 +13,14 @@
 
 <header class="header container-fluid">
     <a class="header__shop-link">
-        <img class="header__shop-logo" src="img/the_shop_logo.svg">
+        <img class="shop-logo" src="img/the_shop_logo.svg">
     </a>
 
     <a href="http://oggettoweb.com/" class="header__oggetto-link">
-        <img class="header__oggetto-logo" src="img/oggetto_logo.svg">
+        <img class="oggetto-logo" src="img/oggetto_logo.svg">
     </a>
 
-    <div class="header__phone">+7 (812) 2&bull;12&bull;85&bull;06</div>
+    <a class="phone" href="tel:+78122128506">+7 (812) 2&bull;12&bull;85&bull;06</a>
 </header>
 
 <div class="nav-strip">
@@ -35,9 +35,9 @@
             </li>
             <% }); %>
         </ul>
-        <form method="get" class="search right-on-tablet">
+        <form method="get" class="search">
             <input class="search__input" name="query">
-            <img class="search__icon" src="img/icons/search.svg">
+            <input type="image" class="search__icon" src="img/icons/search.svg">
         </form>
     </div>
 </div>
@@ -46,12 +46,11 @@
     <div class="product clearfix">
         <div class="breadcrumbs">
             <a class="breadcrumbs__link" href="#">LISP</a>
-            /
             <a class="breadcrumbs__link" href="#">Одежда</a>
-            /
             <a class="breadcrumbs__link breadcrumbs__link_last" href="#">Футболки</a>
         </div>
-        <div class="product__info right-on-desktop">
+
+        <div class="product__info">
             <h1 class="product__name">Футболка Alien technology</h1>
             <div class="product__description">
                 Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
@@ -61,9 +60,9 @@
             </div>
         </div>
 
-        <img class="product__image left-on-desktop" src="img/tshirts/tshirt_white.jpg">
+        <img class="product__image" src="img/tshirts/tshirt_white.jpg">
 
-        <form method="post" class="product__form right-on-desktop">
+        <form method="post" class="product__form">
             <div class="product__settings">
                 <div class="product__sizes">
                     <div class="product__option-group-name">Размер</div>
@@ -116,61 +115,60 @@
 <footer class="footer">
     <div class="container-fluid">
         <div class="footer__links">
-            <div class="footer__service">
-                <ul class="footer__group footer__group_centered-mobile padding-for-title">
+                <ul class="service">
                     <% let footer_service_links = ['Сервис и поддержка', 'Как сделать заказ', 'Возврат товара', 'Публичная оферта',
                         'Доставка', 'Спобобы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы'];
                         footer_service_links.forEach( (item, index) => {
-                        let title = index == 0 ? 'footer__title' : ''; %>
-                        <li class="footer__item <%= title %>">
-                            <a class="footer__link" href="#"><%= item %></a>
+                        let title = index == 0 ? 'service__title' : ''; %>
+                        <li class="service__item <%= title %>">
+                            <a class="service__link" href="#"><%= item %></a>
                         </li>
                     <% }); %>
                 </ul>
-            </div>
 
-            <div class="footer__info">
-                <ul class="footer__group footer__group_centered-mobile padding-for-title">
+                <ul class="company-info">
                     <% let footer_info_links = ['О компании', 'О нас', 'Контакты', 'Вакансии',
                         'Партнерам', 'Сертификаты', 'Преимущества', 'Наши скидки'];
                     footer_info_links.forEach( (item, index) => {
-                        let title = index == 0 ? 'footer__title' : ''; %>
-                    <li class="footer__item <%= title %>">
-                        <a class="footer__link" href="#"><%= item %></a>
+                        let title = index == 0 ? 'company-info__title' : ''; %>
+                    <li class="company-info__item <%= title %>">
+                        <a class="company-info__link" href="#"><%= item %></a>
                     </li>
                     <% }); %>
                 </ul>
-            </div>
 
-            <div class="footer__benefits">
-                <ul class="footer__group footer__group_centered items-vertical-align">
-                    <li class="footer__item mobile-text-centered">
-                        <a class="footer__link" href="#">
-                            <img class="footer__img footer__img_s footer__img_shift_l" src="img/icons/delivery.svg">
+            <div class="our-features">
+                <ul class="our-features__list">
+                    <li class="our-features__item">
+                        <a class="our-features__link" href="#">
+                            <img class="our-features__img our-features__img_s our-features__img_shift_l" src="img/icons/delivery.svg">
                             бесплатная доставка от 4000
                         </a>
                     </li>
-                    <li class="footer__item mobile-text-centered">
-                        <a class="footer__link" href="#">
-                            <img class="footer__img footer__img_s footer__img_shift_s" src="img/icons/heart.svg">
+                    <li class="our-features__item">
+                        <a class="our-features__link" href="#">
+                            <img class="our-features__img our-features__img_s our-features__img_shift_s" src="img/icons/heart.svg">
                             пробники в подарок при каждой покупке
                         </a>
                     </li>
-                    <li class="footer__item mobile-text-centered">
-                        <a class="footer__link" href="#">
-                            <img class="footer__img footer__img_s footer__img_shift_s" src="img/icons/cup.svg">
+                    <li class="our-features__item">
+                        <a class="our-features__link" href="#">
+                            <img class="our-features__img our-features__img_s our-features__img_shift_s" src="img/icons/cup.svg">
                             акции и подарки за покупку
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <ul class="footer__group footer__group_centered footer__network">
+
+            <ul class="social-networks">
                 <% let networks = ['facebook', 'twitter', 'instagram']
                    networks.forEach( item => { %>
-                    <li><a href="#">
-                        <img class="footer__img footer__img_l" src="img/icons/<%= item %>.svg">
-                    </a></li>
+                    <li class="social-networks__item">
+                        <a class="social-networks__link" href="#">
+                            <img class="social-networks__img" src="img/icons/<%= item %>.svg">
+                        </a>
+                    </li>
                 <% }); %>
             </ul>
         </div>
@@ -181,6 +179,7 @@
         </div>
     </div>
 </footer>
+
 
 <script src="js/scripts.js"></script>
 </body>
