@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body id="dispatcher">
 
 <header class="header container-fluid">
     <a class="header__shop-link">
@@ -56,7 +56,7 @@
                 Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.
             </div>
             <div class="product__price">
-                1500 &#8381;
+                1500
             </div>
         </div>
 
@@ -78,7 +78,10 @@
                         let mod = 'product__option_' + id;
                         let checked = index == 0 ? 'checked' : ''; %>
                         <input id= <%= id %> name='size' type="radio" <%= checked %> value= <%= item.орtion_value %> class="product__radio">
-                        <label for= <%= id %> class="product__option <%= mod %> product__option_<%= checked %>"><%= item.орtion_value %></label>
+                        <label for= <%= id %> class="product__option <%= mod %> product__option_<%= checked %>"
+                         data-type=<%= item.option_type %> data-value=<%= item.орtion_value %>>
+                            <%= item.орtion_value %>
+                        </label>
                     <% }); %>
                 </div>
 
@@ -96,7 +99,8 @@
                     let mod = 'product__option_' + id;
                     let checked = index == 0 ? 'checked' : ''; %>
                     <input id= <%= id %> name='color' type="radio" <%= checked %> value= <%= item.орtion_value %> class="product__radio">
-                    <label for= <%= id %> class="product__option <%= mod %> product__option_<%= checked %>" data-color=<%= item.орtion_value %>></label>
+                    <label for= <%= id %> class="product__option <%= mod %> product__option_<%= checked %>"
+                        data-type=<%= item.option_type %> data-value=<%= item.орtion_value %>></label>
                     <% }); %>
                 </div>
             </div>
