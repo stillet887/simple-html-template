@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "prod": "gulp prod",
-    "lint": "eslint src && stylelint src/less/*.less"
+    "lint": "eslint gulpfile.js src && stylelint src/less/*.less"
   },
   "author": "Andrey Miskov",
   "license": "ISC",
@@ -15,13 +15,18 @@
     "browser-sync": "^2.18.11",
     "eslint": "^3.19.0",
     "gulp-autoprefixer": "^4.0.0",
-    "stylelint": "^7.13.0"
+    "stylelint": "^7.13.0",
+    "gulp-sourcemaps": "^2.6.1"
   },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-ejs": "^3.0.1",
     "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.6.1"
+    "gulp-csso": "^3.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-image": "^4.0.0",
+    "gulp-minify": "^1.0.0"
   }
 }
